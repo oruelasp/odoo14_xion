@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+      <!-- Tipos de acto -->
+      <record id="narrative_act_type_view_form" model="ir.ui.view">
+            <field name="name">narrative.act.type.form</field>
+            <field name="model">narrative.act.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+      </record>
+      <record id="narrative_act_type_view_tree" model="ir.ui.view">
+            <field name="name">narrative.act.type.tree</field>
+            <field name="model">narrative.act.type</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="code"/>
+                  <field name="name"/>
+              </tree>
+          </field>
+      </record>
+      <record id="narrative_act_type_action" model="ir.actions.act_window">
+          <field name="name">Creación de tipos de acto</field>
+          <field name="res_model">narrative.act.type</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Marcadores de acto -->
+      <record id="narrative_act_tag_view_form" model="ir.ui.view">
+            <field name="name">narrative.act.tag.form</field>
+            <field name="model">narrative.act.tag</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+      </record>
+      <record id="narrative_act_tag_view_tree" model="ir.ui.view">
+            <field name="name">narrative.act.tag.tree</field>
+            <field name="model">narrative.act.tag</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="code"/>
+                  <field name="name"/>
+              </tree>
+          </field>
+      </record>
+      <record id="narrative_act_tag_action" model="ir.actions.act_window">
+          <field name="name">Creación de marcadores de acto</field>
+          <field name="res_model">narrative.act.tag</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Tipo de personaje -->
+      <record id="narrative_partner_type_view_form" model="ir.ui.view">
+            <field name="name">narrative.partner.type.form</field>
+            <field name="model">narrative.partner.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+      </record>
+      <record id="narrative_partner_type_view_tree" model="ir.ui.view">
+            <field name="name">narrative.partner.type.tree</field>
+            <field name="model">narrative.partner.type</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="code"/>
+                  <field name="name"/>
+                  <field name="description"/>
+              </tree>
+          </field>
+      </record>
+      <record id="narrative_partner_type_action" model="ir.actions.act_window">
+          <field name="name">Creación de tipos de personaje</field>
+          <field name="res_model">narrative.partner.type</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Arcos de personaje -->
+      <record id="narrative_partner_arc_view_form" model="ir.ui.view">
+            <field name="name">narrative.partner.arc.form</field>
+            <field name="model">narrative.partner.arc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+      </record>
+      <record id="narrative_partner_arc_view_tree" model="ir.ui.view">
+            <field name="name">narrative.partner.arc.tree</field>
+            <field name="model">narrative.partner.arc</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="code"/>
+                  <field name="name"/>
+                  <field name="description"/>
+              </tree>
+          </field>
+      </record>
+      <record id="narrative_partner_arc_action" model="ir.actions.act_window">
+          <field name="name">Creación de arcos de personaje</field>
+          <field name="res_model">narrative.partner.arc</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Funciones de personaje -->
+      <record id="narrative_partner_function_view_form" model="ir.ui.view">
+            <field name="name">narrative.partner.function.form</field>
+            <field name="model">narrative.partner.function</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+      </record>
+      <record id="narrative_partner_function_view_tree" model="ir.ui.view">
+            <field name="name">narrative.partner.function.tree</field>
+            <field name="model">narrative.partner.function</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="code"/>
+                  <field name="name"/>
+                  <field name="description"/>
+              </tree>
+          </field>
+      </record>
+      <record id="narrative_partner_function_action" model="ir.actions.act_window">
+          <field name="name">Creación de funciones de personaje</field>
+          <field name="res_model">narrative.partner.function</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Ubicaciones de escenas -->
+      <record id="narrative_scene_place_view_form" model="ir.ui.view">
+            <field name="name">narrative.scene.place.form</field>
+            <field name="model">narrative.scene.place</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+      </record>
+      <record id="narrative_scene_place_view_tree" model="ir.ui.view">
+            <field name="name">narrative.scene.place.tree</field>
+            <field name="model">narrative.scene.place</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="code"/>
+                  <field name="name"/>
+              </tree>
+          </field>
+      </record>
+      <record id="narrative_scene_place_action" model="ir.actions.act_window">
+          <field name="name">Creación de ubicaciones de escena</field>
+          <field name="res_model">narrative.scene.place</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+  </data>
+</odoo>

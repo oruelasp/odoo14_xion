@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <menuitem id="main_create_narrative"
+            name="Narrativa"
+            sequence="31"
+            web_icon="create_narrative,static/description/icon.png"
+        />
+
+        <menuitem id="menu_create_narrative"
+            name="Estructura"
+            parent="main_create_narrative"
+            sequence="1"
+        />
+        <menuitem id="menu_data_master"
+            name="Datos Maestros"
+            parent="main_create_narrative"
+            sequence="2"
+        />
+        <menuitem id="menu_config"
+            name="Configuración"
+            parent="main_create_narrative"
+            sequence="3"
+        />
+
+        <menuitem id="menu_narrative_item"
+                  parent="menu_create_narrative"
+                  name="Eje Narrativo"
+                  action="res_narrative_action"
+                  sequence="1"
+        />
+        <menuitem id="menu_narrative_act_item"
+                  parent="menu_create_narrative"
+                  name="Actos"
+                  action="narrative_act_action"
+                  sequence="2"
+        />
+        <menuitem id="menu_narrative_chapter_item"
+                  parent="menu_create_narrative"
+                  name="Capítulos"
+                  action="narrative_chapter_action"
+                  sequence="3"
+        />
+        <menuitem id="menu_narrative_scene_item"
+                  parent="menu_create_narrative"
+                  name="Escenas"
+                  action="narrative_scene_action"
+                  sequence="4"
+        />
+        <menuitem id="menu_narrative_event_item"
+                  parent="menu_create_narrative"
+                  name="Eventos"
+                  action="narrative_event_action"
+                  sequence="5"
+        />
+
+        <menuitem id="menu_character_section"
+                  parent="menu_data_master"
+                  name="Personajes"
+                  sequence="1"
+        />
+        <menuitem id="menu_character_item"
+                  parent="menu_character_section"
+                  name="Personajes"
+                  action="res_partner_character_action"
+                  sequence="1"
+        />
+        <menuitem id="menu_character_type_item"
+                  parent="menu_character_section"
+                  name="Tipos de personaje"
+                  action="narrative_partner_type_action"
+                  sequence="2"
+        />
+        <menuitem id="menu_character_arc_item"
+                  parent="menu_character_section"
+                  name="Arcos de personaje"
+                  action="narrative_partner_arc_action"
+                  sequence="3"
+        />
+        <menuitem id="menu_character_function_item"
+                  parent="menu_character_section"
+                  name="Funciones de personaje"
+                  action="narrative_partner_function_action"
+                  sequence="4"
+        />
+        <menuitem id="menu_act_submenu"
+                  parent="menu_data_master"
+                  name="Actos"
+                  sequence="2"
+        />
+        <menuitem id="menu_act_type_item"
+                  parent="menu_act_submenu"
+                  name="Tipo de Acto"
+                  action="narrative_act_type_action"
+                  sequence="1"
+        />
+        <menuitem id="menu_act_tag_item"
+                  parent="menu_act_submenu"
+                  name="Marcadores de Acto"
+                  action="narrative_act_tag_action"
+                  sequence="2"
+        />
+        <menuitem id="menu_scene_submenu"
+                  parent="menu_data_master"
+                  name="Escenas"
+                  sequence="3"
+        />
+        <menuitem id="menu_scene_place_item"
+                  parent="menu_scene_submenu"
+                  name="Ubicaciones"
+                  action="narrative_scene_place_action"
+                  sequence="1"
+        />
+
+        <menuitem id="menu_config_item"
+                  parent="menu_config"
+                  name="Plantillas"
+                  action="res_narrative_config_action"
+                  sequence="1"
+        />
+
+    </data>
+</odoo>

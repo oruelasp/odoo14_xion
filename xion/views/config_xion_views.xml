@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+      <record id="res_narrative_config_view_form" model="ir.ui.view">
+            <field name="name">res.narrative.config.form</field>
+            <field name="model">res.narrative.config</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Estructura de Plantilla">
+                                <field name="act_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="type"/>
+                                        <field name="tag_ids" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+      </record>
+      <record id="res_narrative_config_view_tree" model="ir.ui.view">
+          <field name="name">res.narrative.config.tree</field>
+          <field name="model">res.narrative.config</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="code"/>
+                  <field name="name"/>
+                  <field name="act_ids"/>
+              </tree>
+          </field>
+      </record>
+      <record id="res_narrative_config_action" model="ir.actions.act_window">
+          <field name="name">Creación de plantilla</field>
+          <field name="res_model">res.narrative.config</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+          <field name="view_id" ref="res_narrative_config_view_tree"/>
+      </record>
+  </data>
+</odoo>
