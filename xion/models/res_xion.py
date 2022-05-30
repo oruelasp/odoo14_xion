@@ -86,10 +86,9 @@ class XionSession(models.Model):
     datetime_end = fields.Datetime('Fecha-hora fin')
     voltage = fields.Float('Voltaje')
     duration = fields.Integer('Duración (en minutos)')
-    feedback_id = fields.Many2one('xion.catalog', string='Feedback', domain="[('code', '=', {fb})]".format(fb=FEEBACK))
+    feedback_id = fields.Many2one('xion.catalog', string='Feedback', domain="[('code', '=', {fb})]".format(fb=FEEDBACK))
     product_id = fields.Many2one('product.product', string='Producto')
 
-    @api.multi
     def name_get(self):
         res = []
         for record in self:
@@ -111,7 +110,6 @@ class XionMonitoring(models.Model):
     scale_id = fields.Many2one('xion.catalog', string='HDSS', domain="[('code', '=', {hdss})]".format(hdss=HDSS))
     observation = fields.Char('Observaciones')
 
-    @api.multi
     def name_get(self):
         res = []
         for record in self:

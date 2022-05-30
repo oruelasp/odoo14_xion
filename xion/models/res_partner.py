@@ -10,7 +10,6 @@ class ResPartner(models.Model):
     birthdate_date = fields.Date('Fecha de cumpleaños')
     age = fields.Integer(string='Edad', readonly=True, compute='_compute_age')
 
-    @api.multi
     def name_get(self):
         res = []
         for record in self:
@@ -40,7 +39,6 @@ class ResPartnerHistoy(models.Model):
     imc = fields.Float('Índice de masa corporal', compute='_compute_imc')
     age = fields.Integer(related='partner_id.age')
 
-    @api.multi
     def name_get(self):
         res = []
         for record in self:
