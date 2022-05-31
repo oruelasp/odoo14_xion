@@ -4,7 +4,7 @@
     'name': 'Xion Technologies',
     'version': '1.1.0',
     'category': 'Technology',
-    'license': 'Xion technologies',
+    'license': '',
     'summary': 'APP centralizadora de clientes, tratamientos y suscripciones',
     'description': """
 APP desarrollada por Xion Technologies que permite gestionar clientes, suscripciones, tratamientos, sesiones y productos.
