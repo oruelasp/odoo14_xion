@@ -2,7 +2,7 @@
 
 from odoo import api, fields, models
 
-from .constants import STATE_SELECTION, FEEDBACK, HDSS
+from .constants import ACTIVE, FEEDBACK, HDSS, STATE_SELECTION
 
 
 class XionCatalog(models.Model):
@@ -36,7 +36,6 @@ class XionCatalog(models.Model):
                            limit=1)
         return self.env.context.get('default_parent_id') or root.id
 
-    @api.multi
     def name_get(self):
         res = []
         for record in self:
@@ -65,7 +64,6 @@ class XionTreatment(models.Model):
     state = fields.Selection(STATE_SELECTION, string='Estado')
     product_id = fields.Many2one('product.product', string='Producto')
 
-    @api.multi
     def name_get(self):
         res = []
         for record in self:
@@ -98,6 +96,36 @@ class XionSession(models.Model):
                 name = '{}-S{}'.format(record.treatment_id.display_name, 'X')
             res.append((record.id, name))
         return res
+
+    @api.model
+    def api_save_session(self, vals_list):
+        resultado = {'error': '', 'status': 201}
+        try:
+            serial = vals_list.get('serial')
+            datetime_start = vals_list.get('datetime_start')
+            datetime_end = vals_list.get('datetime_end')
+            voltage = vals_list.get('voltage')
+            duration = vals_list.get('duration')
+            partner = self.env['res.partner'].search([('vat', '=', serial)])
+            treatment = self.env['xion.treatment'].search([('partner_id', '=', partner.id), ('state', '=', ACTIVE)])
+
+            if treatment:
+                parametros = {
+                    'treatment_id': treatment.id,
+                    'datetime_start': datetime_start,
+                    'datetime_end': datetime_end,
+                    'voltage': voltage,
+                    'duration': duration,
+                }
+                self.create(parametros)
+                resultado['status'] = 201
+            else:
+                resultado['error'] = 'El paciente no tiene un tratamiento activo'
+                resultado['status'] = 404
+        except Exception as e:
+            resultado['error'] = str(e)
+            resultado['status'] = 500
+        return resultado
 
 
 class XionMonitoring(models.Model):

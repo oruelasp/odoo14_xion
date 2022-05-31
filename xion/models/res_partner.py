@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from dateutil.relativedelta import relativedelta
+from datetime import datetime
 
+from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models
 
 
@@ -27,6 +28,30 @@ class ResPartner(models.Model):
             if record.birthdate_date:
                 age = relativedelta(fields.Date.today(), record.birthdate_date).years
             record.age = age
+
+    @api.model
+    def api_validar_serial(self, vals_list):
+        resultado = {'error': '', 'status': 200}
+        try:
+            serial = vals_list.get('serial')
+            partner = self.search([('vat', '=', serial)])
+            fecha_actual = datetime.now().date()
+            is_active = False
+            if partner:
+                fecha_inicio = partner.membership_start
+                fecha_fin = partner.membership_stop
+                if fecha_inicio and fecha_fin and fecha_inicio <= fecha_actual and fecha_fin >= fecha_actual:
+                    is_active = True
+                resultado['active'] = is_active
+                resultado['date_end'] = fecha_fin.strftime('%Y-%m-%d') if fecha_fin else ''
+            else:
+                resultado['active'] = is_active
+                resultado['error'] = 'serial no existe'
+                resultado['status'] = 404
+        except Exception as e:
+            resultado['error'] = str(e)
+            resultado['status'] = 500
+        return resultado
 
 
 class ResPartnerHistoy(models.Model):
