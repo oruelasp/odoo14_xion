@@ -20,7 +20,7 @@ APP desarrollada por Xion Technologies que permite gestionar clientes, suscripci
         #'views/config_xion_views.xml', # Ajustes
         #'views/xion_views.xml', # Workflow
         #'views/menu_xion_views.xml', # Menúes
-        #'security/ir.model.access.csv' # Permisos de acceso
+        'security/ir.model.access.csv' # Permisos de acceso
     ],
     'installable': True,
     'application': False,
