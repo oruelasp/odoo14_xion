@@ -63,6 +63,7 @@ class XionTreatment(models.Model):
     date_end = fields.Date('Fecha fin')
     duration = fields.Integer('Duración (en días)')
     state = fields.Selection(STATE_SELECTION, string='Estado')
+    product_id = fields.Many2one('product.product', string='Producto')
 
     @api.multi
     def name_get(self):
@@ -87,7 +88,6 @@ class XionSession(models.Model):
     voltage = fields.Float('Voltaje')
     duration = fields.Integer('Duración (en minutos)')
     feedback_id = fields.Many2one('xion.catalog', string='Feedback', domain="[('code', '=', {fb})]".format(fb=FEEDBACK))
-    product_id = fields.Many2one('product.product', string='Producto')
 
     def name_get(self):
         res = []
