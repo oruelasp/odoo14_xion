@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f2d59437-8357-40e6-8f69-4ec7f2cec249" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
