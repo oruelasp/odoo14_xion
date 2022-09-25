@@ -15,15 +15,14 @@ APP desarrollada por Xion Technologies que permite gestionar clientes, suscripci
         'membership',
     ],
     'data': [
-        #'views/res_xion_views.xml', # Datos maestros
-        #'views/inherit_xion_views.xml', # Heredados
-        #'views/config_xion_views.xml', # Ajustes
-        #'views/xion_views.xml', # Workflow
-        #'views/menu_xion_views.xml', # Menúes
-        'security/ir.model.access.csv' # Permisos de acceso
+        'views/res_xion_views.xml', # Settings
+        'views/inherit_xion_views.xml', # Inherited
+        'views/xion_views.xml', # Operations
+        'views/menu_xion_views.xml', # Menus
+        'security/ir.model.access.csv' # Access
     ],
     'installable': True,
-    'application': False,
+    'application': True,
 }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

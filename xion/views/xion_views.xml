@@ -1,212 +1,59 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
   <data>
-      <!-- Tipos de acto -->
-      <record id="narrative_act_type_view_form" model="ir.ui.view">
-            <field name="name">narrative.act.type.form</field>
-            <field name="model">narrative.act.type</field>
+      <!-- Sprints -->
+      <record id="xion_sprint_form" model="ir.ui.view">
+            <field name="name">xion.sprint.form</field>
+            <field name="model">xion.sprint</field>
             <field name="arch" type="xml">
                 <form>
                     <header>
-
+                        <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
                         <group>
                             <group>
-                                <field name="code" required="1"/>
-                                <field name="name" required="1"/>
+                                <field name="partner_id" required="1"/>
+                                <field name="sequence" required="1"/>
+                            </group>
+                            <group>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
                             </group>
                         </group>
-
-                    </sheet>
-                </form>
-            </field>
-      </record>
-      <record id="narrative_act_type_view_tree" model="ir.ui.view">
-            <field name="name">narrative.act.type.tree</field>
-            <field name="model">narrative.act.type</field>
-          <field name="arch" type="xml">
-              <tree>
-                  <field name="code"/>
-                  <field name="name"/>
-              </tree>
-          </field>
-      </record>
-      <record id="narrative_act_type_action" model="ir.actions.act_window">
-          <field name="name">Creación de tipos de acto</field>
-          <field name="res_model">narrative.act.type</field>
-          <field name="view_type">form</field>
-          <field name="view_mode">tree,form</field>
-      </record>
-
-      <!-- Marcadores de acto -->
-      <record id="narrative_act_tag_view_form" model="ir.ui.view">
-            <field name="name">narrative.act.tag.form</field>
-            <field name="model">narrative.act.tag</field>
-            <field name="arch" type="xml">
-                <form>
-                    <header>
-
-                    </header>
-                    <sheet>
                         <group>
                             <group>
-                                <field name="code" required="1"/>
-                                <field name="name" required="1"/>
+                                <field name="duration"/>
+                                <field name="product_id"/>
                             </group>
                         </group>
-
                     </sheet>
                 </form>
             </field>
       </record>
-      <record id="narrative_act_tag_view_tree" model="ir.ui.view">
-            <field name="name">narrative.act.tag.tree</field>
-            <field name="model">narrative.act.tag</field>
-          <field name="arch" type="xml">
-              <tree>
-                  <field name="code"/>
-                  <field name="name"/>
-              </tree>
-          </field>
+      <record id="xion_sprint_tree" model="ir.ui.view">
+        <field name="name">xion.sprint.tree</field>
+        <field name="model">xion.sprint</field>
+        <field name="arch" type="xml">
+          <tree>
+              <field name="partner_id"/>
+              <field name="sequence"/>
+              <field name="date_start"/>
+              <field name="date_end"/>
+              <field name="state"/>
+          </tree>
+        </field>
       </record>
-      <record id="narrative_act_tag_action" model="ir.actions.act_window">
-          <field name="name">Creación de marcadores de acto</field>
-          <field name="res_model">narrative.act.tag</field>
-          <field name="view_type">form</field>
+      <record id="sprint_act_action" model="ir.actions.act_window">
+          <field name="name">Sprints de Usuarios</field>
+          <field name="res_model">xion.sprint</field>
           <field name="view_mode">tree,form</field>
       </record>
 
-      <!-- Tipo de personaje -->
-      <record id="narrative_partner_type_view_form" model="ir.ui.view">
-            <field name="name">narrative.partner.type.form</field>
-            <field name="model">narrative.partner.type</field>
-            <field name="arch" type="xml">
-                <form>
-                    <header>
-
-                    </header>
-                    <sheet>
-                        <group>
-                            <group>
-                                <field name="code" required="1"/>
-                                <field name="name" required="1"/>
-                            </group>
-                            <group>
-                                <field name="description"/>
-                            </group>
-                        </group>
-
-                    </sheet>
-                </form>
-            </field>
-      </record>
-      <record id="narrative_partner_type_view_tree" model="ir.ui.view">
-            <field name="name">narrative.partner.type.tree</field>
-            <field name="model">narrative.partner.type</field>
-          <field name="arch" type="xml">
-              <tree>
-                  <field name="code"/>
-                  <field name="name"/>
-                  <field name="description"/>
-              </tree>
-          </field>
-      </record>
-      <record id="narrative_partner_type_action" model="ir.actions.act_window">
-          <field name="name">Creación de tipos de personaje</field>
-          <field name="res_model">narrative.partner.type</field>
-          <field name="view_type">form</field>
-          <field name="view_mode">tree,form</field>
-      </record>
-
-      <!-- Arcos de personaje -->
-      <record id="narrative_partner_arc_view_form" model="ir.ui.view">
-            <field name="name">narrative.partner.arc.form</field>
-            <field name="model">narrative.partner.arc</field>
-            <field name="arch" type="xml">
-                <form>
-                    <header>
-
-                    </header>
-                    <sheet>
-                        <group>
-                            <group>
-                                <field name="code" required="1"/>
-                                <field name="name" required="1"/>
-                            </group>
-                            <group>
-                                <field name="description"/>
-                            </group>
-                        </group>
-
-                    </sheet>
-                </form>
-            </field>
-      </record>
-      <record id="narrative_partner_arc_view_tree" model="ir.ui.view">
-            <field name="name">narrative.partner.arc.tree</field>
-            <field name="model">narrative.partner.arc</field>
-          <field name="arch" type="xml">
-              <tree>
-                  <field name="code"/>
-                  <field name="name"/>
-                  <field name="description"/>
-              </tree>
-          </field>
-      </record>
-      <record id="narrative_partner_arc_action" model="ir.actions.act_window">
-          <field name="name">Creación de arcos de personaje</field>
-          <field name="res_model">narrative.partner.arc</field>
-          <field name="view_type">form</field>
-          <field name="view_mode">tree,form</field>
-      </record>
-
-      <!-- Funciones de personaje -->
-      <record id="narrative_partner_function_view_form" model="ir.ui.view">
-            <field name="name">narrative.partner.function.form</field>
-            <field name="model">narrative.partner.function</field>
-            <field name="arch" type="xml">
-                <form>
-                    <header>
-
-                    </header>
-                    <sheet>
-                        <group>
-                            <group>
-                                <field name="code" required="1"/>
-                                <field name="name" required="1"/>
-                            </group>
-                            <group>
-                                <field name="description"/>
-                            </group>
-                        </group>
-
-                    </sheet>
-                </form>
-            </field>
-      </record>
-      <record id="narrative_partner_function_view_tree" model="ir.ui.view">
-            <field name="name">narrative.partner.function.tree</field>
-            <field name="model">narrative.partner.function</field>
-          <field name="arch" type="xml">
-              <tree>
-                  <field name="code"/>
-                  <field name="name"/>
-                  <field name="description"/>
-              </tree>
-          </field>
-      </record>
-      <record id="narrative_partner_function_action" model="ir.actions.act_window">
-          <field name="name">Creación de funciones de personaje</field>
-          <field name="res_model">narrative.partner.function</field>
-          <field name="view_type">form</field>
-          <field name="view_mode">tree,form</field>
-      </record>
-
-      <!-- Ubicaciones de escenas -->
-      <record id="narrative_scene_place_view_form" model="ir.ui.view">
-            <field name="name">narrative.scene.place.form</field>
-            <field name="model">narrative.scene.place</field>
+      <!-- Session -->
+      <record id="xion_session_form" model="ir.ui.view">
+            <field name="name">xion.session.form</field>
+            <field name="model">xion.session</field>
             <field name="arch" type="xml">
                 <form>
                     <header>
@@ -214,32 +61,45 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="code" required="1"/>
-                                <field name="name" required="1"/>
+                                <field name="sprint_id" required="1"/>
+                                <field name="sequence" required="1"/>
+                            </group>
+                            <group>
+                                <field name="datetime_start"/>
+                                <field name="datetime_end"/>
                             </group>
                         </group>
                         <group>
-                            <field name="description"/>
+                            <group>
+                                <field name="duration"/>
+                                <field name="voltage"/>
+                                <field name="feedback_id"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>
             </field>
       </record>
-      <record id="narrative_scene_place_view_tree" model="ir.ui.view">
-            <field name="name">narrative.scene.place.tree</field>
-            <field name="model">narrative.scene.place</field>
-          <field name="arch" type="xml">
-              <tree>
-                  <field name="code"/>
-                  <field name="name"/>
-              </tree>
-          </field>
+      <record id="xion_session_tree" model="ir.ui.view">
+        <field name="name">xion.session.tree</field>
+        <field name="model">xion.session</field>
+        <field name="arch" type="xml">
+          <tree>
+              <field name="sprint_id"/>
+              <field name="sequence"/>
+              <field name="datetime_start"/>
+              <field name="datetime_end"/>
+              <field name="voltage"/>
+              <field name="duration"/>
+              <field name="feedback_id"/>
+          </tree>
+        </field>
       </record>
-      <record id="narrative_scene_place_action" model="ir.actions.act_window">
-          <field name="name">Creación de ubicaciones de escena</field>
-          <field name="res_model">narrative.scene.place</field>
-          <field name="view_type">form</field>
+      <record id="session_act_action" model="ir.actions.act_window">
+          <field name="name">Sesiones de Usuarios</field>
+          <field name="res_model">xion.session</field>
           <field name="view_mode">tree,form</field>
       </record>
+
   </data>
 </odoo>

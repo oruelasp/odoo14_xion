@@ -14,8 +14,8 @@ DOCUMENT_TYPE_SELECTION = [
 ]
 
 # Códigos de Catálogo
-FEEDBACK = 'feeback'
-HDSS = 'hdss'
+FEEDBACK = 'feedback'
+SCALE = 'scale'
 
 # Estados
 DRAFT = '0'

@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 "access_xion_catalog_user","access_xion_catalog_user","xion.model_xion_catalog",,1,1,1,1
-"access_xion_treatment_user","access_xion_treatment_user","xion.model_xion_treatment",,1,1,1,1
+"access_xion_sprint_user","access_xion_sprint_user","xion.model_xion_sprint",,1,1,1,1
 "access_xion_session_user","access_xion_session_user","xion.model_xion_session",,1,1,1,1
 "access_xion_monitoring_user","access_xion_monitoring_user","xion.model_xion_monitoring",,1,1,1,1
